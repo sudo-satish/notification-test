@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/OneSignalSDKWorker.js')
+          .then(function (registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('Service worker registration failed, error:', error);
+          });
+      }
+  </script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "21863787-f2cd-4aff-b0e2-49f06b27cccb",
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+  Hello World!
+  
+</body>
+</html>
